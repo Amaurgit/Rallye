@@ -37,13 +37,11 @@ public class Equipe {
 	}
 
 	public String infosEquipe() {
-		String string = "Equipe [nom=" + nom + ", nationalite=" + nationalite + ", constructeur=" + constructeur
+		String string = "Equipe [nom=" + nom + ", nationalite=" + nationalite + ", constructeur=" + constructeur + "]"
 				+ System.lineSeparator();
 
 		for (Equipage equipage : equipages) {
-			string += equipage.getDossard();
 			string += equipage.infosEquipage();
-			string += System.lineSeparator();
 
 		}
 		return string;

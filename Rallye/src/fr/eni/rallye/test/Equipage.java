@@ -18,8 +18,8 @@ public class Equipage {
 	}
 
 	public String infosEquipage() {
-		return "Equipage [dossard=" + dossard + System.lineSeparator() + pilote.infosConcurrent()
-				+ coPilote.infosConcurrent() + "]";
+		return "	Equipage [dossard=" + dossard + "]" + System.lineSeparator() + pilote.infosConcurrent()
+				+ coPilote.infosConcurrent() ;
 	}
 
 }
