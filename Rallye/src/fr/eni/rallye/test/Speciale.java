@@ -2,15 +2,17 @@ package fr.eni.rallye.test;
 
 import java.awt.Window.Type;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 public class Speciale {
 
 	private Date jour_Heure;
 	private double distance;
 	private String nom;
-
 	private Type_Epreuve type;
+	private List<Resultat> resultats = new ArrayList<>(50);
 
 	public Speciale(String nom, Date jour_Heure, double distance, Type_Epreuve type) {
 		super();
@@ -18,6 +20,11 @@ public class Speciale {
 		this.distance = distance;
 		this.nom = nom;
 		this.type = type;
+	}
+
+	public void AjouterResultat(Resultat resultat) {
+		resultats.add(resultat);
+
 	}
 
 	public String getNom() {
@@ -31,10 +38,12 @@ public class Speciale {
 	}
 
 	public Resultat[] getClassement() {
-		
-		
-		
-		return null;
+		Resultat[] resultatsTab = new Resultat[resultats.size()];
+
+		for (int i = 0; i < resultats.size(); i++) {
+			resultatsTab[i] = resultats.get(i);
+		}
+		return resultatsTab;
 	}
 
 }

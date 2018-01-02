@@ -1,5 +1,6 @@
 package fr.eni.rallye.test;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Resultat {
@@ -8,7 +9,12 @@ public class Resultat {
 	private Speciale speciale;
 
 	public Resultat(Equipage equipage, Speciale speciale, Date temps) {
+		super();
 		this.temps = temps;
+		this.equipage = equipage;
+		this.speciale = speciale;
+		speciale.AjouterResultat(this);
+
 	}
 
 	public Date getTemps() {
@@ -24,7 +30,10 @@ public class Resultat {
 	}
 
 	public String infosResultat() {
-		return "Resultat [temps=" + temps + ", equipage=" + equipage + ", speciale=" + speciale + "]";
+		SimpleDateFormat sdf = new SimpleDateFormat("mm:ss");
+
+		return speciale.infosSpeciale() + equipage.infosEquipage() + "Resultat [temps=" + sdf.format(temps) + "]"
+				+ System.lineSeparator();
 	}
 
 }
