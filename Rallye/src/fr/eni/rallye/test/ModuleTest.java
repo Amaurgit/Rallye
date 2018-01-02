@@ -99,21 +99,20 @@ public class ModuleTest {
 		/*
 		 * visualiser le classement general
 		 */
-		// System.out.println("**Classement general du Rallye de Corse");
-		// System.out.println("***************************************");
-		// Classement[] classementGeneral = rallyeCorse.getClassementGeneral();
-		// buffer = new StringBuffer();
-		// for (Classement result : classementGeneral) {
-		// if (result != null)
-		// buffer.append(String.format("%s", result.infosClassement()));
-		// }
-		// System.out.println(buffer.toString());
-		//
-		// System.out.println("Appuyez sur entrée pour sortir du test...");
-		// Scanner sc = new Scanner(System.in);
-		// sc.nextLine();
-		//
-		// }
+		System.out.println("**Classement general du Rallye de Corse");
+		System.out.println("***************************************");
+		Classement[] classementGeneral = rallyeCorse.getClassementGeneral();
+		buffer = new StringBuffer();
+		for (Classement result : classementGeneral) {
+			if (result != null)
+				buffer.append(String.format("%s", result.infosClassement()));
+		}
+		System.out.println(buffer.toString());
+
+		System.out.println("Appuyez sur entrée pour sortir du test...");
+		Scanner sc = new Scanner(System.in);
+		sc.nextLine();
 
 	}
+
 }

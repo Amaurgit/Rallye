@@ -5,7 +5,6 @@ import java.util.Date;
 public class Classement {
 
 	private Date cumulTemps;
-
 	private Equipage equipage;
 
 	public Classement(Date cumulTemps, Equipage equipage) {
@@ -19,7 +18,7 @@ public class Classement {
 	}
 
 	public String infosClassement() {
-		return "Classement [cumulTemps=" + cumulTemps + ", equipage=" + equipage + "]";
+		return "Classement [" + equipage.infosEquipage() + "cumulTemps=" + cumulTemps + "]";
 	}
 
 }

@@ -1,8 +1,13 @@
 package fr.eni.rallye.test;
 
 import java.awt.Window.Type;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.Date;
 import java.util.List;
 
@@ -34,15 +39,24 @@ public class Speciale {
 	public String infosSpeciale() {
 		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/YYY hh:mm");
 		return "	Speciale [Nom=" + nom + ", jour_Heure= " + sdf.format(jour_Heure) + ", distance=" + distance
-				+ ", nom=" + nom + ", type=" + type + "]" + System.lineSeparator();
+				+ ", type=" + type + "]" + System.lineSeparator();
 	}
 
 	public Resultat[] getClassement() {
+		Date cumulTemps1;
+		Date cumulTemps2;
+		Date cumulTemps3;
 		Resultat[] resultatsTab = new Resultat[resultats.size()];
-
+		resultats.sort(Comparator.comparing(Resultat::getTemps));
 		for (int i = 0; i < resultats.size(); i++) {
 			resultatsTab[i] = resultats.get(i);
+			if (resultats.get(i).getEquipage().getDossard() == 1) {
+
+			}
 		}
+		Classement (resultats.get(i).getEquipage(),resultats.get(i).getTemps())
+
+
 		return resultatsTab;
 	}
 

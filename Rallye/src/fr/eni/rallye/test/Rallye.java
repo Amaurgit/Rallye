@@ -49,7 +49,11 @@ public class Rallye {
 	}
 
 	public Classement[] getClassementGeneral() {
-		// TODO Auto-generated method stub
+		for (int i = 0; i < speciales.size(); i++) {
+			Classement[] classements;
+			speciales.get(i).getClassement();
+
+		}
 		return null;
 	}
 
